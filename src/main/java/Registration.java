@@ -86,8 +86,19 @@ public class Registration {
         WebElement submitButton = driver.findElement(By.cssSelector("[type='submit']"));
         submitButton.click();
         assertTrue(driver.getCurrentUrl().contains("registration1"));
+        WebElement firstNameInputField = driver.findElement(
+                By.cssSelector("[placeholder='Input your first name']"));
+        assertEquals("Заполните это поле.",
+                firstNameInputField.getAttribute("validationMessage"));
     }
 
+    @Test
+    public void registrationWithoutLastName(){
 
+    }
+
+    public void registrationWithoutEmail(){
+
+    }
 
 }
